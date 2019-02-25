@@ -1,15 +1,16 @@
 const defaultState = {
-  testing: "works?"
+  currentUser: '',
 
 }
 
 function Reducer(state=defaultState, action){
-  switch (action.type) { //action is an object
-    case "SOMETHING":
-      return {...state, somethingNew: "Value"}
+  switch (action.type) { //action is an object, type is a property
+    case "SET_USER":
+    console.log()
+      return {...state, currentUser}
       break;
     default:
-      return state
+      return state //whenever you return from a reducer, that becomes the new state
 
   }
 
