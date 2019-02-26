@@ -8,7 +8,7 @@ class App extends Component {
   state = {
     currentUserId: '',
     currentUser: null,
-    loggedIn: false,
+    loggedIn: true,
   }
 
   //takes the information from login form and posts to backend, response should be confirmation of user or error that username/password do not match.
@@ -34,8 +34,8 @@ class App extends Component {
         })
       }
     })
-    // event.target.reset();
   }
+
   //takes user input in sign up form and creates a new user.
   signupUser = (event, userInfo) => {
     event.preventDefault()
@@ -56,8 +56,8 @@ class App extends Component {
   }
 
   render() {
-
     const loggedIn = this.state.loggedIn;
+
     return (
       <div>
         {loggedIn ? (<Main {...this.state}/>)
@@ -70,16 +70,8 @@ class App extends Component {
   }
 }
 
-// <Main currentUserId={this.state.currentUserId}/>
-// <LoginContainer
-//   signinUser={this.signinUser}
-//   signupUser={this.signupUser}/>
-//
 export default App;
 
-// <LoginContainer
-  // signinUser={this.signinUser}
-  // signupUser={this.signupUser}/>
 
 //TODO:
 //styling: find a way to make the error message appear on the screen by the form field.

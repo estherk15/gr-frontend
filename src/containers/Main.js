@@ -1,11 +1,8 @@
 import React from 'react';
 import NavHeader from '../components/NavHeader'
+import Content from './Content'
 
 class Main extends React.Component {
-
-  state = {
-    userInfo: null,
-  }
 
   componentDidMount() {
     fetch(`http://localhost:3000/api/v1/users/${this.props.currentUserId}`)
@@ -16,8 +13,8 @@ class Main extends React.Component {
   render() {
     return (
       <div className="main-container">
-        <NavHeader/>
-        
+        <NavHeader />
+        <Content />
 
       </div>
     );
