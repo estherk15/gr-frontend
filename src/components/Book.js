@@ -3,7 +3,9 @@ import React from 'react';
 const Book = (props) => {
   return(
     <div>
-      Book Component placeholder
+      Title: {props.title}
+      Author: {props.author}
+
     </div>
   )
 

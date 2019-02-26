@@ -7,8 +7,7 @@ class ListsContainer extends Component {
     return (
       <div className="list-container">
       List Container
-        <List />
-        <List />
+      {this.props.currentUser.lists.map(list => <List key={list.id} {...list}/>)}
       </div>
     );
   }

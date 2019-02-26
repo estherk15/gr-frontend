@@ -8,7 +8,7 @@ class App extends Component {
   state = {
     currentUserId: '',
     currentUser: null,
-    loggedIn: true,
+    loggedIn: false,
   }
 
   //takes the information from login form and posts to backend, response should be confirmation of user or error that username/password do not match.

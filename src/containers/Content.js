@@ -5,12 +5,13 @@ import SideBar from './SideBar'
 const Content = (props) => {
   //FUNCTIONAL COMPONENT!!!!!!! NO THIS!!!!!
 
-  console.log(props)
   return (
     <div className="container">
       Content Container
-      <SideBar />
-      <BookContent  {...props}/>
+      <SideBar currentUser={props.currentUser}/>
+      <BookContent
+        currentUser={props.currentUser}
+        {...props}/>
     </div>
   )
 }
