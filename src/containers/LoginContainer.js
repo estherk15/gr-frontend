@@ -6,16 +6,14 @@ import React, { Component } from 'react';
 import SignIn from '../components/SignIn'
 import SignUp from '../components/SignUp'
 
-class LoginContainer extends Component {
+const LoginContainer = (props) => {
+  return (
+    <div className="login">
+      <SignIn signinUser={props.signinUser}/>
+      <SignUp signupUser={props.signupUser}/>
+    </div>
+  );
 
-  render() {
-    return (
-      <div className="login">
-        <SignIn />
-        <SignUp />
-      </div>
-    );
-  }
 }
 
 export default LoginContainer;

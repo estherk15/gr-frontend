@@ -1,45 +1,85 @@
 import React, { Component } from 'react';
 import './App.css'
 
-//React Router
-// import {
-//   BrowserRouter as Router,
-//   Route,
-//   Link
-// } from 'react-router-dom'
-import { connect } from 'react-redux'
-
-//Components
-// import NavHeader from './components/NavHeader'
 import LoginContainer from './containers/LoginContainer'
+import Main from './containers/Main'
 
 class App extends Component {
+  state = {
+    currentUserId: '',
+    currentUser: null,
+    loggedIn: false,
+  }
 
-  // componentDidMount() {
-  //   fetch('http://localhost:3000/api/v1/books')
-  //   .then(res => res.json())
-  //   .then(data => console.log(data))
-  // }
+  //takes the information from login form and posts to backend, response should be confirmation of user or error that username/password do not match.
+  signinUser = (event, userInfo) => {
+    event.preventDefault()
+    fetch('http://localhost:3000/api/v1/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(userInfo)
+    })
+    .then(response => response.json())
+    .then(data => {
+      if(data.error){
+        alert(data.error)
+      } else {
+        this.setState({
+          currentUserId: data.id,
+          currentUser: data,
+          loggedIn: true,
+        })
+      }
+    })
+    // event.target.reset();
+  }
+  //takes user input in sign up form and creates a new user.
+  signupUser = (event, userInfo) => {
+    event.preventDefault()
+    fetch('http://localhost:3000/api/v1/users', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(userInfo),
+    })
+    .then(response => response.json())
+    .then(data => this.setState({
+      currentUserId: data.id,
+      currentUser: data,
+      loggedIn: true,
+    }))
+  }
 
   render() {
-    console.log(this.props)
+
+    const loggedIn = this.state.loggedIn;
     return (
-      <LoginContainer/>
+      <div>
+        {loggedIn ? (<Main {...this.state}/>)
+          :
+          (<LoginContainer
+          signinUser={this.signinUser}
+          signupUser={this.signupUser}/>)}
+      </div>
     );
   }
 }
 
-const mapStateToProps = (state) => {
-  return { //always returns an object, this will ultimately go in props
-    currentUser: state.currentUser,
-    testing: state.testing,
-  }
-}
+// <Main currentUserId={this.state.currentUserId}/>
+// <LoginContainer
+//   signinUser={this.signinUser}
+//   signupUser={this.signupUser}/>
+//
+export default App;
 
-const mapDispatchToProps = (dispatch) => {
-  return { //always returns an object, key value, value is function.
-    setUser: (currentUser) => dispatch({ type: 'SET_USER', payload: currentUser})
-  }
-}
+// <LoginContainer
+  // signinUser={this.signinUser}
+  // signupUser={this.signupUser}/>
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+//TODO:
+//styling: find a way to make the error message appear on the screen by the form field.

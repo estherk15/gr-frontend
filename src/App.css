@@ -9,9 +9,6 @@
   color: white;
 }
 
-input {
-  margin: 2px;
-}
 
 .login {
   display: flex;
@@ -33,6 +30,20 @@ input {
   border-style: dotted;
   justify-content: center;
   height: 200px;
+  padding: 5px;
+  margin: 2px;
+}
+
+.main-container {
+  /* this is the main container, the nav, book container and list container are inside */
+
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  border-style: dotted;
+  justify-content: space-between;
   padding: 5px;
   margin: 2px;
 }
