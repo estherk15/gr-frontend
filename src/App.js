@@ -56,8 +56,8 @@ class App extends Component {
   }
 
   render() {
-
     const loggedIn = this.state.loggedIn;
+    
     return (
       <div>
         {loggedIn ? (<Main {...this.state}/>)
