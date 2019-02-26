@@ -5,5 +5,8 @@ LOGIN
 LEFT CONTAINER
 - currentUserId prop once you can incorporate Login feature, you don't need to fetch for each user info, you'll already have it from the login component fetch.
 
+LIST
+- change list to props when you take hardcoded information out from state.
+
 **STYLE**
 - App.js : find a way to make the error message appear on the screen by the form field.
