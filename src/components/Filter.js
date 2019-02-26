@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-class Sort extends Component {
+class Filter extends Component {
 
   render() {
     return (
       <div className="control" >
-      Sort Component <br/>
+      Filter Component <br/>
         <label className="radio" >
-          <input type="radio" name="title" defaultChecked/>
+          <input type="radio" name="all" defaultChecked/>
           Title
         </label>
         <label className="radio" >
@@ -15,7 +15,7 @@ class Sort extends Component {
           Author
         </label>
         <label className="radio" >
-          <input type="radio" name="title" />
+          <input type="radio" name="author" />
           Genre
         </label>
       </div>
@@ -24,4 +24,4 @@ class Sort extends Component {
 
 }
 
-export default Sort;
+export default Filter;
