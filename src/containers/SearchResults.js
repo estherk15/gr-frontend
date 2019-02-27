@@ -3,14 +3,14 @@ import Filter from '../components/Filter'
 import BookList from './BookList'
 
 class SearchResults extends Component {
-  cleanData = (props) => {
-    return {
-
-    }
-  }
+  // cleanData = (props) => {
+  //   return {
+  //
+  //   }
+  // }
 
   render() {
-    console.log(this.props)
+    // console.log('PROPS in Search Result', this.props)
     return (
       <div className='search-results'>
         Search Results

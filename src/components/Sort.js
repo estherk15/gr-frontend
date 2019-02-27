@@ -11,11 +11,11 @@ class Sort extends Component {
           Title
         </label>
         <label className="radio" >
-          <input type="radio" name="title" />
+          <input type="radio" name="author" />
           Author
         </label>
         <label className="radio" >
-          <input type="radio" name="title" />
+          <input type="radio" name="genre" />
           Genre
         </label>
       </div>

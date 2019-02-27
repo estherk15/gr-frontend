@@ -3,13 +3,25 @@ import NavHeader from '../components/NavHeader'
 import Content from './Content'
 
 
-const fetchBooksFromGoogle = (word) => {
-  return fetch(`https://www.googleapis.com/books/v1/volumes?q=${word}`)
-  .then(response => response.json())
-  .then(json => {
-    return items.map(item => createBook(item))
-  })
-}
+// const fetchBooksFromGoogle = (searchInput) => {
+//   return fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchInput}`)
+//   .then(response => response.json())
+//   .then(json => {
+//     return json.items.map(item => createBook(item))
+//   })
+// }
+//
+// const createBook = (bookObj) => { //volumeInfo is a key in google data
+//   return {
+//     title: bookObj.volumeInfo.title,
+//     authors: bookObj.volumeInfo.authors,
+//     description: bookObj.volumeInfo.description,
+//     snippet: bookObj.volumeInfo.searchInfo.textSnippet,
+//     categories: bookObj.volumeInfo.title.categories, //this is an array
+//     imgUrl: bookObj.volumeInfo.imageLinks.thumbnail,
+//     infoLink: bookObj.volumeInfo.infoLink
+//   }
+// }
 
 class Main extends React.Component {
 
@@ -19,21 +31,23 @@ class Main extends React.Component {
     searchResults: [],
   }
 
+  //When Reader submits their search input, fire off the fetchSearchResults fn with search input
   searchSubmit = (event, searchInput) => {
     event.preventDefault()
     this.fetchSearchResults(searchInput)
     event.target.reset()
   }
 
-  fetchSearchResults = (word) => {
-    // fetchBooksFromGoogle(word)
-    // .then(books => {
-    //   this.setState({
-    //     searchSubmitted: true,
-    //     searchResults: books
-    //   })
-    // })
-    fetch(`https://www.googleapis.com/books/v1/volumes?q=${word}`)
+  //This fn will take the search input and fire off fetchBooksFromGoogle fn with
+  fetchSearchResults = (searchInput) => {
+  //   fetchBooksFromGoogle(searchInput)
+  //   .then(books => {
+  //     this.setState({
+  //       searchSubmitted: true,
+  //       searchResults: books,
+  //     })
+  //   })
+    fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchInput}`)
     .then(response => response.json())
     .then(results => {
       // console.log('results from API', results);
