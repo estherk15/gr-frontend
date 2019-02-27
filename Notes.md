@@ -13,7 +13,10 @@ Main ln:6-12
 you need to make a create book function
 
 FILTER / SORT
-- I don't know what you did since yesterday, but now the radio buttons aren't working!
+- I don't know what you did since yesterday, but now the radio buttons aren't working
+
+BOOK CONTENT CONTAINER
+- there's an error because you're mapping through the array of authors but not giving it a key
 
 
 

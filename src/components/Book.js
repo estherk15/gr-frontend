@@ -3,8 +3,9 @@ import React from 'react';
 const Book = (props) => {
   return(
     <div>
-      Title: {props.title}
-      Author: {props.author}
+      <p>Title: {props.title}</p>
+
+      <p>Author: {props.authors.map(author=> author)}</p>
 
     </div>
   )

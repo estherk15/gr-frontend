@@ -12,10 +12,9 @@
 .app {
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 10px);
+  /* height: calc(100vh - 10px); */
   margin: 10px 10px 0 10px;
 }
-
 
 .login {
   display: flex;
@@ -44,7 +43,10 @@
 .container {
   border-style: dotted;
   display: flex;
-  height: calc(100vh - 10px);
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  height: auto;
   margin: 10px 10px 0 10px;
 }
 
@@ -55,7 +57,7 @@
 }
 
 .sidebar {
-  width:30%;
+  width:25%;
   border-style: dotted;
   margin: 10px 10px 0 10px;
   overflow: scroll;
@@ -78,4 +80,12 @@
 .book-list {
   border-style: dotted;
   margin: 10px 10px 0 10px;
+}
+
+.search-form {
+  border-style: dotted;
+  width: 100%;
+  margin: 10px;
+  padding: 5px;
+  height:
 }
