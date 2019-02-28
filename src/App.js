@@ -5,9 +5,28 @@ import LoginContainer from './containers/LoginContainer'
 import Main from './containers/Main'
 
 class App extends Component {
+
   state = {
     currentUserId: '',
     currentUser: null,
+      // {
+      //   id: 1,
+      //   username: "Meghan",
+      //   lists: [
+      //             {
+      //               id: 1,
+      //               title: "Want to Read",
+      //               description: "Reading Wishlist"
+      //             },
+      //             {
+      //               id: 2,
+      //               title: "Currently Reading",
+      //               description: "Books I am currenlty reading"
+      //             }
+      //           ],
+      //   books: [ ],
+      //   responses: [ ]
+      // },
     loggedIn: false,
   }
 
@@ -34,8 +53,8 @@ class App extends Component {
         })
       }
     })
-    // event.target.reset();
   }
+
   //takes user input in sign up form and creates a new user.
   signupUser = (event, userInfo) => {
     event.preventDefault()
@@ -56,8 +75,14 @@ class App extends Component {
   }
 
   render() {
+<<<<<<< HEAD
     const loggedIn = this.state.loggedIn;
     
+=======
+    console.log(this.state)
+    const loggedIn = this.state.loggedIn;
+
+>>>>>>> search
     return (
       <div>
         {loggedIn ? (<Main {...this.state}/>)
@@ -70,16 +95,8 @@ class App extends Component {
   }
 }
 
-// <Main currentUserId={this.state.currentUserId}/>
-// <LoginContainer
-//   signinUser={this.signinUser}
-//   signupUser={this.signupUser}/>
-//
 export default App;
 
-// <LoginContainer
-  // signinUser={this.signinUser}
-  // signupUser={this.signupUser}/>
 
 //TODO:
 //styling: find a way to make the error message appear on the screen by the form field.

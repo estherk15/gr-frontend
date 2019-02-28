@@ -9,6 +9,12 @@
   color: white;
 }
 
+.app {
+  display: flex;
+  flex-direction: column;
+  /* height: calc(100vh - 10px); */
+  margin: 10px 10px 0 10px;
+}
 
 .login {
   display: flex;
@@ -34,16 +40,52 @@
   margin: 2px;
 }
 
-.main-container {
-  /* this is the main container, the nav, book container and list container are inside */
-
+.container {
+  border-style: dotted;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  height: auto;
+  margin: 10px 10px 0 10px;
 }
 
 .navbar {
-  width: 100%;
   display: flex;
   border-style: dotted;
-  justify-content: space-between;
+  margin: 10px 10px 0 10px;
+}
+
+.sidebar {
+  width:25%;
+  border-style: dotted;
+  margin: 10px 10px 0 10px;
+  overflow: scroll;
   padding: 5px;
-  margin: 2px;
+}
+
+.book-content {
+  width: 70%;
+  border-style: dotted;
+  margin: 10px 10px 0 10px;
+  padding: 5px;
+  padding-left: 10px;
+}
+
+.control {
+  border-style: dotted;
+  margin: 10px 10px 0 10px;
+}
+
+.book-list {
+  border-style: dotted;
+  margin: 10px 10px 0 10px;
+}
+
+.search-form {
+  border-style: dotted;
+  width: 100%;
+  margin: 10px;
+  padding: 5px;
+  height:
 }

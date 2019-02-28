@@ -1,27 +1,20 @@
 import React from 'react';
 import NavHeader from '../components/NavHeader'
+import Content from './Content'
 
 class Main extends React.Component {
 
-  state = {
-    userInfo: null,
-  }
-
-  componentDidMount() {
-    fetch(`http://localhost:3000/api/v1/users/${this.props.currentUserId}`)
-    .then(response => response.json())
-    .then(userInfo => this.setState({ userInfo }))
-  }
-
   render() {
+
     return (
       <div className="main-container">
-        <NavHeader/>
-        
-
+        <NavHeader username={this.props.currentUser.username}/>
+        <Content currentUser={this.props.currentUser}/>
       </div>
     );
   }
 }
 
 export default Main;
+
+  // <NavHeader searchSubmit={this.searchSubmit}/>

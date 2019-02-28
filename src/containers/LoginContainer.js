@@ -1,8 +1,5 @@
-import React, { Component } from 'react';
-
-// import { connect } from 'react-redux'
+import React from 'react';
 //Components
-
 import SignIn from '../components/SignIn'
 import SignUp from '../components/SignUp'
 
