@@ -7,27 +7,27 @@ import Main from './containers/Main'
 class App extends Component {
 
   state = {
-    currentUserId: '4',
-    currentUser:
-      {
-        id: 4,
-        username: "Meghan",
-        lists: [
-                  {
-                    id: 1,
-                    title: "Want to Read",
-                    description: "Reading Wishlist"
-                  },
-                  {
-                    id: 2,
-                    title: "Currently Reading",
-                    description: "Books I am currenlty reading"
-                  }
-                ],
-        books: [ ],
-        responses: [ ]
-      },
-    loggedIn: true,
+    currentUserId: '',
+    currentUser: null,
+      // {
+      //   id: 1,
+      //   username: "Meghan",
+      //   lists: [
+      //             {
+      //               id: 1,
+      //               title: "Want to Read",
+      //               description: "Reading Wishlist"
+      //             },
+      //             {
+      //               id: 2,
+      //               title: "Currently Reading",
+      //               description: "Books I am currenlty reading"
+      //             }
+      //           ],
+      //   books: [ ],
+      //   responses: [ ]
+      // },
+    loggedIn: false,
   }
 
   //takes the information from login form and posts to backend, response should be confirmation of user or error that username/password do not match.
@@ -75,7 +75,7 @@ class App extends Component {
   }
 
   render() {
-    // console.log(this.state)
+    console.log(this.state)
     const loggedIn = this.state.loggedIn;
 
     return (

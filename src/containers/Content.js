@@ -13,11 +13,12 @@ const fetchBooksFromGoogle = (searchInput) => {
 }
 
 const createBook = (bookObj) => { //volumeInfo is a key in google data
+  const categories = bookObj.volumeInfo.title.categories ? bookObj.volumeInfo.title.categories : null
   return {
     title: bookObj.volumeInfo.title,
     authors: bookObj.volumeInfo.authors,
     description: bookObj.volumeInfo.description,
-    categories: bookObj.volumeInfo.title.categories, //this is an array
+    categories: categories, //this is an array
     imgUrl: bookObj.volumeInfo.imageLinks.thumbnail,
     infoLink: bookObj.volumeInfo.infoLink
   }
@@ -32,7 +33,6 @@ class Content extends React.Component {
 
   //This fn will take the search input and fire off fetchBooksFromGoogle fn with
   fetchSearchResults = (searchInput) => {
-
     fetchBooksFromGoogle(searchInput)
     .then(books =>{
       this.setState({
@@ -42,20 +42,21 @@ class Content extends React.Component {
     })
   }
 
-  componentDidMount() {
-    fetch(`http://localhost:3000/api/v1/users/${this.props.currentUser.id}`)
-    .then(response => response.json())
-    .then(userInfo => this.setState({ userInfo }))
-  }
-
   //When Reader submits their search input, fire off the fetchSearchResults fn with search input
   searchSubmit = (event, searchInput) => {
     event.preventDefault()
     this.fetchSearchResults(searchInput)
     event.target.reset()
   }
+  //
+  // componentDidMount() {
+  //   fetch(`http://localhost:3000/api/v1/users/${this.props.currentUser.id}`)
+  //   .then(response => response.json())
+  //   .then(userInfo => this.setState({ userInfo }))
+  // }
 
   render() {
+    // console.log(this.props);
     return (
       <div className="container">
         Content Container
@@ -63,7 +64,8 @@ class Content extends React.Component {
         <SideBar currentUser={this.props.currentUser}/>
         <BookContent
           currentUser={this.props.currentUser}
-          {...this.state}/>
+          searchSubmitted={this.state.searchSubmitted}
+          searchResults={this.state.searchResults}/>
       </div>
     )
   }

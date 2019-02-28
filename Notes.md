@@ -18,7 +18,8 @@ FILTER / SORT
 BOOK CONTENT CONTAINER
 - there's an error because you're mapping through the array of authors but not giving it a key
 
-
+LIST BUTTON
+- Add the Read category eventually to the backend so each user has more than the 2 lists
 
 
 **STYLE**

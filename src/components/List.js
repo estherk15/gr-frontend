@@ -5,7 +5,7 @@ const List = (props) => {
   return (
     <div className="list-item">
       <h1>{props.title}</h1>
-
+      <p>  </p>
     </div>
   )
 }
