@@ -6,7 +6,12 @@ const BookList = (props) => {
   return (
     <div className="book-list">
       Book List Container
-      {props.books.map(book => <Book key={book.id} {...book}/>)}
+      {props.books.map(book =>
+        <Book
+          key={book.id}
+          {...book}
+          searchSubmitted={props.searchSubmitted}
+          currentUser={props.currentUser}/>)}
     </div>
   );
 }

@@ -8,24 +8,38 @@ class App extends Component {
 
   state = {
     currentUserId: '',
-    currentUser: null,
-      // {
-      //   id: 1,
-      //   username: "Meghan",
-      //   lists: [
-      //             {
-      //               id: 1,
-      //               title: "Want to Read",
-      //               description: "Reading Wishlist"
-      //             },
-      //             {
-      //               id: 2,
-      //               title: "Currently Reading",
-      //               description: "Books I am currenlty reading"
-      //             }
+    currentUser:
+     null,
+     // {
+     //    "id": 1,
+     //    "username": "Esther",
+     //    "lists": [
+     //        {
+     //            "id": 1,
+     //            "title": "Want to Read",
+     //            "description": "Reading Wishlist"
+     //        },
+     //        {
+     //            "id": 2,
+     //            "title": "Currently Reading",
+     //            "description": "Books I am currently reading"
+     //        },
+     //        {
+     //            "id": 3,
+     //            "title": "Read",
+     //            "description": "Already Read"
+     //        }
+     //    ],
+      //   "books": [
+      //       {
+      //           "id": 1,
+      //           "title": "hello",
+      //           "authors": [
+      //               "someone"
       //           ],
-      //   books: [ ],
-      //   responses: [ ]
+      //           "cover_url": "www.test.com"
+      //       }
+      //   ]
       // },
     loggedIn: false,
   }
@@ -75,14 +89,9 @@ class App extends Component {
   }
 
   render() {
-<<<<<<< HEAD
-    const loggedIn = this.state.loggedIn;
-    
-=======
     console.log(this.state)
     const loggedIn = this.state.loggedIn;
 
->>>>>>> search
     return (
       <div>
         {loggedIn ? (<Main {...this.state}/>)

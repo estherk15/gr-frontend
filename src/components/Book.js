@@ -1,16 +1,22 @@
 import React from 'react';
 import ListButton from './ListButton'
 
-const Book = (props) => {
-  return(
-    <div className="list-button">
-      <div className="book-info">
-        <p>Title: {props.title}</p>
+class Book extends React.Component {
+
+  render() {
+    // console.log('BOOK', this.props);
+    return(
+      <div className="list-button">
+        <div className="book-info">
+          <p>Title: {this.props.title}</p>
+          <p>Author(s): {this.props.authors}</p>
+        </div>
+        {this.props.searchSubmitted ? <ListButton {...this.props}/> : null}
 
       </div>
-      <ListButton props={props}/>
-    </div>
-  )
+    )
+  }
+
 
 }
 

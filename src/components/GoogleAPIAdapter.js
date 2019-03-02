@@ -1,8 +1,8 @@
 class GoogleAPIAdapter {
-
-  doSomething(){ //instance
-
-  }
+  //
+  // doSomething(){ //instance
+  //
+  // }
 
   static doSomething(){ //class
 
@@ -12,8 +12,8 @@ class GoogleAPIAdapter {
 
 export default GoogleAPIAdapter
 
-
-const inst = new GoogleAPIAdapter() //instance
-inst.doSomething()
+// 
+// const inst = new GoogleAPIAdapter() //instance
+// inst.doSomething()
 
 GoogleAPIAdapter.doSomething() //class

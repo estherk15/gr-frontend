@@ -4,11 +4,11 @@ import SideBar from './SideBar'
 import SearchAllBooks from '../components/SearchAllBooks'
 
 
-const fetchBooksFromGoogle = (searchInput) => {
+const fetchBooksFromGoogle = (searchInput) => { //fetches search result from google books API
   return fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchInput}`)
   .then(response => response.json())
   .then(json => {
-    return json.items.map(item => createBook(item))
+    return json.items.map(item => createBook(item)) //returns an array of objects created from the createBook fn.
   })
 }
 
@@ -16,6 +16,7 @@ const createBook = (bookObj) => { //volumeInfo is a key in google data
   const categories = bookObj.volumeInfo.title.categories ? bookObj.volumeInfo.title.categories : null
   return {
     title: bookObj.volumeInfo.title,
+    id: bookObj.id, //Google has a string of characters attached to each book ex. "wrOQLV6xB-wC"
     authors: bookObj.volumeInfo.authors,
     description: bookObj.volumeInfo.description,
     categories: categories, //this is an array
@@ -72,3 +73,5 @@ class Content extends React.Component {
 }
 
 export default Content
+
+//Content sends down the user's info lf all their books as well as state which holds the search information.

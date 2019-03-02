@@ -10,7 +10,10 @@ class SearchResults extends Component {
       <div className='search-results'>
         Search Results
         <Filter />
-        <BookList books={this.props.books}/>
+        <BookList
+          books={this.props.books}
+          searchSubmitted={this.props.searchSubmitted}
+          currentUser={this.props.currentUser}/>
       </div>
     );
   }

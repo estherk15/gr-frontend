@@ -5,12 +5,15 @@ import BookList from './BookList'
 class MyBooks extends Component {
 
   render() {
-    console.log("passed down to myBook", this.props)
+    // console.log("passed down to myBook", this.props)
     return (
       <div>
         MyBooks
         <Sort />
-        <BookList {...this.props}/>
+        <BookList
+          currentUser={this.props.currentUser}
+          searchSubmitted={this.props.searchSubmitted}
+          books={this.props.currentUser.books}/>
       </div>
     );
   }
