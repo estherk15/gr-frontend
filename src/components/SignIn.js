@@ -15,13 +15,15 @@ class SignIn extends React.Component {
 
   render() {
     return (
-      <div className="signin">
-      Signin!
-        <form onSubmit={(event) => this.props.signinUser(event, this.state)}>
-          <input type="text" name="username" placeholder="Username" onChange={this.handleChange}/>
-          <input type="password" name="password" placeholder="Password" onChange={this.handleChange}/>
-          <input type="submit" value="Submit"/>
-        </form>
+      <div className="level">
+        <div className="level-right">
+          <strong>Sign In </strong>
+          <form className="level-item"onSubmit={(event) => this.props.signinUser(event, this.state)}>
+            <input className="input" type="text" name="username" placeholder="Username" onChange={this.handleChange}/>
+            <input className="input" type="password" name="password" placeholder="Password" onChange={this.handleChange}/>
+            <input className="button is-primary" type="submit" value="Submit"/>
+          </form>
+        </div>
       </div>
     )
   }

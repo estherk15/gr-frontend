@@ -93,13 +93,13 @@ class App extends Component {
     const loggedIn = this.state.loggedIn;
 
     return (
-      <div>
+      <section className='section'>
         {loggedIn ? (<Main {...this.state}/>)
           :
           (<LoginContainer
           signinUser={this.signinUser}
           signupUser={this.signupUser}/>)}
-      </div>
+      </section>
     );
   }
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Filter from '../components/Filter'
+// import Filter from '../components/Filter'
 import BookList from './BookList'
 
 class SearchResults extends Component {
@@ -9,7 +9,6 @@ class SearchResults extends Component {
     return (
       <div className='search-results'>
         Search Results
-        <Filter />
         <BookList
           books={this.props.books}
           searchSubmitted={this.props.searchSubmitted}
@@ -21,3 +20,4 @@ class SearchResults extends Component {
 }
 
 export default SearchResults;
+// <Filter />

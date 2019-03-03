@@ -7,7 +7,7 @@ class Main extends React.Component {
   render() {
 
     return (
-      <div className="main-container">
+      <div className='section'>
         <NavHeader username={this.props.currentUser.username}/>
         <Content currentUser={this.props.currentUser}/>
       </div>

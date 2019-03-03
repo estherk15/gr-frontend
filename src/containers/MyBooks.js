@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Sort from '../components/Sort'
+// import Sort from '../components/Sort'
 import BookList from './BookList'
 
 class MyBooks extends Component {
@@ -9,11 +9,11 @@ class MyBooks extends Component {
     return (
       <div>
         MyBooks
-        <Sort />
+
         <BookList
-          currentUser={this.props.currentUser}
+          books={this.props.currentUser.books}
           searchSubmitted={this.props.searchSubmitted}
-          books={this.props.currentUser.books}/>
+          currentUser={this.props.currentUser}/>
       </div>
     );
   }
@@ -21,3 +21,5 @@ class MyBooks extends Component {
 }
 
 export default MyBooks;
+
+// <Sort />

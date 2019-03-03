@@ -11,8 +11,7 @@ class Book extends React.Component {
           <p>Title: {this.props.title}</p>
           <p>Author(s): {this.props.authors}</p>
         </div>
-        {this.props.searchSubmitted ? <ListButton {...this.props}/> : null}
-
+        <ListButton {...this.props}/>
       </div>
     )
   }
@@ -23,3 +22,5 @@ class Book extends React.Component {
 export default Book
 
 //if you add any amplifying information to each Book card, you have to make sure the information matches the user json and
+
+// {this.props.searchSubmitted ? <ListButton {...this.props}/> : null}

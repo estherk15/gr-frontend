@@ -12,6 +12,7 @@ const fetchBooksFromGoogle = (searchInput) => { //fetches search result from goo
   })
 }
 
+//These belong in the Google Books API
 const createBook = (bookObj) => { //volumeInfo is a key in google data
   const categories = bookObj.volumeInfo.title.categories ? bookObj.volumeInfo.title.categories : null
   return {

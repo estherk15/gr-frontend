@@ -5,7 +5,7 @@ import SignUp from '../components/SignUp'
 
 const LoginContainer = (props) => {
   return (
-    <div className="login">
+    <div className="container">
       <SignIn signinUser={props.signinUser}/>
       <SignUp signupUser={props.signupUser}/>
     </div>
