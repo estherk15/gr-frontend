@@ -5,9 +5,7 @@ class ListButton extends React.Component {
     value:'',
   }
 
-  addBookToList = (event) => {
-    // console.log(event.target.name)
-    // console.log('ONCLICK HANDLER',this.props)
+  addBookToList = (event) => { //Adds a book to a list
     const listId = event.target.value
     const bookData = {
       google_id: this.props.id,
@@ -16,6 +14,7 @@ class ListButton extends React.Component {
       cover_url: this.props.imgUrl,
       list: {id: listId}
     }
+
     fetch('http://localhost:3000/api/v1/add_book', {
       method: 'PATCH',
       headers: {
@@ -26,21 +25,7 @@ class ListButton extends React.Component {
     })
   }
 
-  // handleChange = (event
-  // ) => {
-  //   const bookId = this.props.id
-  //   const listId = event.target.value
-  //   const bookData = {
-  //     book_id: this.props.id,
-  //
-  //   }
-  //
-  //   // console.log(bookId)
-  //
-  // }
-
-// ()=>this.changeList()
-  changeList = (event) => {
+  changeList = (event) => { //Updates the book's list
     const listId = event.target.value
     const bookId = this.props.id
 
@@ -57,7 +42,6 @@ class ListButton extends React.Component {
     .then(response => response.json())
     .then(console.log)
   }
-
 
   render() {
     const dropdown = () => {
