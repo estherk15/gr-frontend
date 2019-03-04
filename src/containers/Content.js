@@ -50,24 +50,28 @@ class Content extends React.Component {
     this.fetchSearchResults(searchInput)
     event.target.reset()
   }
-  //
-  // componentDidMount() {
-  //   fetch(`http://localhost:3000/api/v1/users/${this.props.currentUser.id}`)
-  //   .then(response => response.json())
-  //   .then(userInfo => this.setState({ userInfo }))
-  // }
+
 
   render() {
     // console.log(this.props);
     return (
-      <div className="container">
-        Content Container
-        <SearchAllBooks searchSubmit={this.searchSubmit} />
-        <SideBar currentUser={this.props.currentUser}/>
-        <BookContent
-          currentUser={this.props.currentUser}
-          searchSubmitted={this.state.searchSubmitted}
-          searchResults={this.state.searchResults}/>
+      <div className="columns">
+        <div className="column is-full">
+          Content Container
+          <SearchAllBooks searchSubmit={this.searchSubmit} />
+          <div className="columns is-gapless">
+            <div className="column is-one-third">
+              <SideBar currentUser={this.props.currentUser}/>
+            </div>
+            <div className="column">
+              <BookContent
+                currentUser={this.props.currentUser}
+                searchSubmitted={this.state.searchSubmitted}
+                searchResults={this.state.searchResults}/>
+            </div>
+          </div>
+        </div>
+
       </div>
     )
   }

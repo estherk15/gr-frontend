@@ -1,4 +1,4 @@
-.App-header {
+/* .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -7,7 +7,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+} */
 
 /* .app {
   display: flex;
@@ -29,24 +29,23 @@ nav#sign-in {
   margin: 5px;
 }
 
-.signup {
-  display: flex;
+div#sign-up {
   border-style: dotted;
-  justify-content: center;
-  height: 200px;
-  padding: 5px;
-  margin: 2px;
+  padding: 10px 20px 10px 20px;
+  margin: 5px;
 }
-/*
+
+.level {
+  border-style: dotted;
+  padding: 10px 20px 10px 20px;
+  margin: 5px;
+}
+
 .container {
   border-style: dotted;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  height: auto;
-  margin: 10px 10px 0 10px;
-} */
+  padding: 10px 20px 10px 20px;
+  margin: 5px;
+}
 
 .navbar {
   display: flex;
@@ -54,29 +53,29 @@ nav#sign-in {
   margin: 10px 10px 0 10px;
 }
 
-.sidebar {
+/* .sidebar {
   width:25%;
   border-style: dotted;
   margin: 10px 10px 0 10px;
   overflow: scroll;
   padding: 5px;
-}
+} */
 
-.book-content {
+/* .book-content {
   width: 70%;
   border-style: dotted;
   margin: 10px 10px 0 10px;
   padding: 5px;
   padding-left: 10px;
   overflow: scroll;
-}
+} */
 
 /* .control {
   border-style: dotted;
   margin: 10px 10px 0 10px;
 } */
 
-.book-list {
+/* .book-list {
   border-style: dotted;
   margin: 10px 10px 0 10px;
 }
@@ -87,4 +86,4 @@ nav#sign-in {
   margin: 10px;
   padding: 5px;
   height:
-}
+} */

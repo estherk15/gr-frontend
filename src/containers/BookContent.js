@@ -18,7 +18,7 @@ class BookContent extends Component {
   render() {
     // console.log('BOOKCONTENT', this.props)
     return (
-      <div className='book-content'>
+      <div className="level">
         Book Content Container
         {this.renderContent()}
       </div>

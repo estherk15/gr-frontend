@@ -6,13 +6,21 @@ class NavHeader extends Component {
   render() {
     // console.log(this.props)
     return (
-      <div className="navbar">
-        <h1>Navigation bar</h1>
-        <div className="link">
-          <h2> Welcome {this.props.username}! </h2>
+      <div className="level" >
+        <div className="level-left">
+          <div className="level-item subtitle is-5">
+            <strong>Good Reader</strong>
+          </div>
         </div>
-        <div className="link">
-          <h2> Placeholder for Logout link </h2>
+        <div className="level-item has-centered-text">
+          <div className="level-item subtitle is-5">
+            Welcome {this.props.username}!
+          </div>
+        </div>
+        <div className="level-right">
+          <div className="level-item">
+            <button className="button is-primary"> Placeholder for Logout link </button>
+          </div>
         </div>
       </div>
 

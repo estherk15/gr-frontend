@@ -1,6 +1,9 @@
 import React from 'react';
 
 class ListButton extends React.Component {
+  state ={
+    value:'',
+  }
 
   addBookToList = (event) => {
     // console.log(event.target.name)
@@ -13,7 +16,6 @@ class ListButton extends React.Component {
       cover_url: this.props.imgUrl,
       list: {id: listId}
     }
-
     fetch('http://localhost:3000/api/v1/add_book', {
       method: 'PATCH',
       headers: {
@@ -24,25 +26,37 @@ class ListButton extends React.Component {
     })
   }
 
-  changeList = (event) => {
-    const bookId = this.props.id
-    const listId = event.target.value
-    const bookData = {
-      book_id: this.props.id,
-      list:  {id: listId}
-    }
+  // handleChange = (event
+  // ) => {
+  //   const bookId = this.props.id
+  //   const listId = event.target.value
+  //   const bookData = {
+  //     book_id: this.props.id,
+  //
+  //   }
+  //
+  //   // console.log(bookId)
+  //
+  // }
 
-    fetch('http://localhost:3000/api/v1/change_list', {
+// ()=>this.changeList()
+  changeList = (event) => {
+    const listId = event.target.value
+    const bookId = this.props.id
+
+    fetch(`http://localhost:3000/api/v1/books/${bookId}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       },
-      body: JSON.stringify(bookData),
+      body: JSON.stringify({
+        list_id: listId,
+      })
     })
-
+    .then(response => response.json())
+    .then(console.log)
   }
-
 
 
   render() {
@@ -80,14 +94,7 @@ class ListButton extends React.Component {
       <div>
         {dropdown()}
       </div>
-      // <div className='select' >
-      //   <select onChange={this.addBookToList}>
-      //     <option>Add a Book</option>
-      //     <option>Currently Reading</option>
-      //     <option>Want to Read</option>
-      //     <option>Read</option>
-      //   </select>
-      // </div>
+
     )
   }
 }

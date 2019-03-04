@@ -14,12 +14,22 @@ class SearchAllBooks extends Component {
 
   render() {
     return (
-      <div className="search-form">
-        <form onSubmit={(e)=>this.props.searchSubmit(e, this.state.searchInput)}>
-          <input type="text" name="searchInput" placeholder="Search for a book" onChange={this.handleChange}/>
-          <button type="submit">Search</button>
-        </form>
-      </div>
+
+        <div className="level">
+          <div className="level-left"></div>
+
+          <form className="level-right" onSubmit={(e)=>this.props.searchSubmit(e, this.state.searchInput)}>
+            <div className="level-item">
+              <input className="input" type="text" name="searchInput" placeholder="Search for a book" onChange={this.handleChange}/>
+            </div>
+            <div className="level-item">
+              <input className="button is-primary" type="submit" value="Search"/>
+            </div>
+          </form>
+
+          <div className="level-right"></div>
+        </div>
+    
     );
   }
 }

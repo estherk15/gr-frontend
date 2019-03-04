@@ -9,7 +9,9 @@ class SearchMyBooks extends Component {
   render() {
     return (
       <div >
-        <input type='text' placeholder="Search My Books"/>
+        <div className="control">
+          <input className="input is-small"type='text' placeholder="Search My Books"/>
+        </div>
       </div>
     );
   }
