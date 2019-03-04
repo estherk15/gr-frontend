@@ -9,26 +9,24 @@
   color: white;
 }
 
-.app {
+/* .app {
   display: flex;
   flex-direction: column;
   /* height: calc(100vh - 10px); */
-  margin: 10px 10px 0 10px;
-}
+  /* margin: 10px 10px 0 10px;
+} */
 
-.login {
+/* .login {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 
-}
+} */
 
-.signin {
-  display: flex;
+nav#sign-in {
   border-style: dotted;
-  justify-content: space-between;
-  padding: 5px;
-  margin: 2px;
+  padding: 10px 20px 10px 20px;
+  margin: 5px;
 }
 
 .signup {
@@ -39,7 +37,7 @@
   padding: 5px;
   margin: 2px;
 }
-/* 
+/*
 .container {
   border-style: dotted;
   display: flex;
@@ -73,10 +71,10 @@
   overflow: scroll;
 }
 
-.control {
+/* .control {
   border-style: dotted;
   margin: 10px 10px 0 10px;
-}
+} */
 
 .book-list {
   border-style: dotted;
