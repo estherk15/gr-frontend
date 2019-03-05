@@ -68,7 +68,6 @@ class ListButton extends React.Component {
         return (
           <div className='select' >
             <select value={this.state.list} onChange={this.changeList}>
-
               <option value='Currently Reading'>Currently Reading</option>
               <option value='Want to Read'>Want to Read</option>
               <option value='Read'>Read</option>
