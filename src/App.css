@@ -41,11 +41,26 @@ div#book-content {
   margin: 5px;
 }
 
-.level {
+div#navheader {
   border-style: dotted;
   padding: 10px 20px 10px 20px;
   margin: 5px;
 }
+
+section {
+  margin-left: 60px;
+  margin-right: 60px;
+}
+/* div#sidebar {
+  border-style: dotted;
+  padding: 10px 20px 10px 20px;
+  margin: 5px;
+} */
+/* .level {
+  border-style: dotted;
+  padding: 10px 20px 10px 20px;
+  margin: 5px;
+} */
 
 /* .container {
   border-style: dotted;

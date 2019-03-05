@@ -6,7 +6,7 @@ class NavHeader extends Component {
   render() {
     // console.log(this.props)
     return (
-      <div className="level" >
+      <div className="level" id="navheader">
         <div className="level-left">
           <div className="level-item subtitle is-5">
             <strong>Good Reader</strong>

@@ -21,7 +21,7 @@ const createBook = (bookObj) => { //volumeInfo is a key in google data
     authors: bookObj.volumeInfo.authors,
     description: bookObj.volumeInfo.description,
     categories: categories, //this is an array
-    imgUrl: bookObj.volumeInfo.imageLinks.thumbnail,
+    cover_url: bookObj.volumeInfo.imageLinks.thumbnail,
     infoLink: bookObj.volumeInfo.infoLink
   }
 }
@@ -31,7 +31,7 @@ class Content extends React.Component {
     searchInput: '',
     searchSubmitted: false,
     searchResults: [],
-    clickedList: null,
+    clickedList: false,
     clickedListBooks: [],
   }
 
@@ -42,6 +42,7 @@ class Content extends React.Component {
       this.setState({
         searchSubmitted: true,
         searchResults: books,
+        clickedList: false,
       })
     })
   }
@@ -53,13 +54,14 @@ class Content extends React.Component {
     event.target.reset()
   }
 
-  handleClickList = (clickedList) => {
-
-    fetch('')
-    this.setState({
-      searchSubmitted: false,
-      clickedList,
-    })
+  handleClickList = (id) => { //when a user clicks a list in sidebar, this fetches all books in that list for display
+    fetch(`http://localhost:3000/api/v1/lists/${id}`)
+    .then(response => response.json())
+    .then(listBooks => this.setState({
+      searchSubmitted: false, //so the search results page doesn't render
+      clickedList: true,
+      clickedListBooks: listBooks,
+    }))
   }
 
 

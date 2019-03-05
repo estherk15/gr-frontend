@@ -7,56 +7,52 @@ import Main from './containers/Main'
 class App extends Component {
 
   state = {
-    currentUserId: '2',
+    currentUserId: '3',
     currentUser:
     // null,
     {
-id: 2,
+id: 3,
 username: "m",
 lists: [
 {
-id: 4,
+id: 7,
 title: "Currently Reading"
 },
 {
-id: 5,
+id: 8,
 title: "Want to Read"
 },
 {
-id: 6,
+id: 9,
 title: "Read"
 }
 ],
 books: [
 {
-id: 7,
-title: "World Cheese Book",
+id: 5,
+title: "Snuggle Puppy!",
 authors: [
-"Juliet Harbutt"
+"Sandra Boynton"
 ],
-cover_url: "http://books.google.com/books/content?id=kMvlBwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-book_list: "Read"
+cover_url: "http://books.google.com/books/content?id=drdRCwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+book_list: "Want to Read",
+description: "A great big hug in book form, Snuggle Puppy is a year-round valentine from parent to child. It is bright, chunky, a pleasure to hold, and has a die-cut cover that reveals a glimpse of the joy inside before it's even opened. Best of all, it's packed, of course, with pure Boynton: her inimitable language, her inimitable illustrations, her inimitable sense of fun. OOO, Snuggle Puppy of mine! Everything about you is especially fine. I love what you are. I love what you do. Fuzzy little Snuggle Puppy, I love you. Featuring a sweet and cuddly doggie cast and rhyming verse, Snuggle Puppy is the perfect bedtime book to read last, because of an ending that kids will want again and again: I started with OOO. . . . Now we'll end like this: [BIG SMOOCH!] Oversized lap edition also available—perfect for reading aloud!",
+snippet: "A great big hug in book form, Snuggle Puppy is a year-round valentine from parent to child. It is bright, chunky, a pleasure to hold, and has a die-cut cover that reveals a glimpse of the joy inside before it's even opened. Best of all, it's packed, of course, with pure Boynton: her inimitable language, her inimitable illustrations, her inimitable sense of fun. OOO, Snuggle Puppy of mine! Everything about you is especially fine. I love what you are. I love what you do. Fuzzy little Snuggle Puppy..."
 },
 {
 id: 6,
-title: "Beautiful Corn",
+title: "The Red Balloon",
 authors: [
-"Anthony Boutard"
+"Albert Lamorisse"
 ],
-cover_url: "http://books.google.com/books/content?id=gTlvzuG4bIoC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-book_list: "Want to Read"
-},
-{
-id: 8,
-title: "A Bag of Marbles",
-authors: [
-"Joseph Joffo"
-],
-cover_url: "http://books.google.com/books/content?id=BHIUSd6psgIC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-book_list: "Read"
+cover_url: "http://books.google.com/books/content?id=JXEIDAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+book_list: "Want to Read",
+description: "A small boy follows a red balloon as it drifts around Paris - sometimes just out of reach.",
+snippet: "A small boy follows a red balloon as it drifts around Paris - sometimes just out of reach...."
 }
 ]
 },
+
     loggedIn: true,
   }
 

@@ -12,8 +12,9 @@ class ListButton extends React.Component {
       google_id: this.props.id,
       title: this.props.title,
       authors: this.props.authors,
-      cover_url: this.props.imgUrl,
-      list: {title: listName}
+      cover_url: this.props.cover_url,
+      list: {title: listName},
+      description: this.props.description,
     }
 
     console.log(bookData)

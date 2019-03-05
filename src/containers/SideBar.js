@@ -7,7 +7,7 @@ class SideBar extends Component {
   render() {
     // console.log(this.props.currentUser)
     return (
-      <div className="tile is-parent is-vertical ">
+      <div className="tile is-parent is-vertical" id="sidebar">
         <div className="tile is-child">
           <p>SideBar Container </p>
         </div>
