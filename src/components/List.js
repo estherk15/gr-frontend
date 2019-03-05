@@ -1,11 +1,11 @@
 import React from 'react';
 
 const List = (props) => {
-  // console.log(props)
+  // console.log('LIST', props)
   return (
-    <div className="list-item">
-      <h1>{props.title}</h1>
-      <p>  </p>
+    <div onClick={()=>props.handleClickList(props.title)}>
+      <p className="is-size-5"> {props.title} </p>
+      <hr/>
     </div>
   )
 }

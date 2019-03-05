@@ -31,6 +31,8 @@ class Content extends React.Component {
     searchInput: '',
     searchSubmitted: false,
     searchResults: [],
+    clickedList: null,
+    clickedListBooks: [],
   }
 
   //This fn will take the search input and fire off fetchBooksFromGoogle fn with
@@ -51,23 +53,36 @@ class Content extends React.Component {
     event.target.reset()
   }
 
+  handleClickList = (clickedList) => {
+
+    fetch('')
+    this.setState({
+      searchSubmitted: false,
+      clickedList,
+    })
+  }
+
 
   render() {
-    // console.log(this.props);
+    console.log(this.state);
     return (
       <div className="columns">
         <div className="column is-full">
           Content Container
           <SearchAllBooks searchSubmit={this.searchSubmit} />
-          <div className="columns is-gapless">
-            <div className="column is-one-third">
-              <SideBar currentUser={this.props.currentUser}/>
+          <div className="columns">
+            <div className="column is-3">
+              <div className="tile is-ancestor">
+                <SideBar handleClickList={this.handleClickList} currentUser={this.props.currentUser}/>
+              </div>
             </div>
             <div className="column">
               <BookContent
                 currentUser={this.props.currentUser}
                 searchSubmitted={this.state.searchSubmitted}
-                searchResults={this.state.searchResults}/>
+                searchResults={this.state.searchResults}
+                clickedList={this.state.clickedList}
+                clickedListBooks={this.state.clickedListBooks}/>
             </div>
           </div>
         </div>

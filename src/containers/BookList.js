@@ -4,8 +4,8 @@ import Book from '../components/Book'
 const BookList = (props) => {
   // console.log('BOOKLIST PROPS', props)
   return (
-    <div className="book-list">
-      Book List Container
+    <div className="tile is-parent is-vertical">
+      
       {props.books.map(book =>
         <Book
           key={book.id}

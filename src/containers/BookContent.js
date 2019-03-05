@@ -10,16 +10,18 @@ class BookContent extends Component {
                 currentUser={this.props.currentUser}
                 searchSubmitted={this.props.searchSubmitted}
                 books={this.props.searchResults}/>
-    } else {
+    } else if(this.props.clickedList){
+      return <MyBooks {...this.props.clickedListBooks}/>
+    }
+    else {
       return <MyBooks {...this.props}/>
     }
   }
 
   render() {
-    // console.log('BOOKCONTENT', this.props)
+    console.log('BOOKCONTENT', this.props)
     return (
-      <div className="level">
-        Book Content Container
+      <div className="tile is-ancestor" id="book-content">
         {this.renderContent()}
       </div>
     );

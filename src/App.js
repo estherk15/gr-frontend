@@ -7,71 +7,55 @@ import Main from './containers/Main'
 class App extends Component {
 
   state = {
-    currentUserId: '1',
+    currentUserId: '2',
     currentUser:
-     // null,
-     {
- id: 1,
- username: "e",
- lists: [
- {
- id: 1,
- title: "Currently Reading"
- },
- {
- id: 2,
- title: "Want to Read"
- },
- {
- id: 3,
- title: "Read"
- }
- ],
- books: [
- {
- id: 1,
- title: "Harry Potter and the Cursed Child – Parts One and Two (Special Rehearsal Edition)",
- authors: [
- "J.K. Rowling",
- "John Tiffany",
- "Jack Thorne"
- ],
- cover_url: "http://books.google.com/books/content?id=tcSMCwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
- },
- {
- id: 2,
- title: "Adventure Cats",
- authors: [
- "Laura J. Moss"
- ],
- cover_url: "http://books.google.com/books/content?id=TpNkDQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
- },
- {
- id: 3,
- title: "Jesus",
- authors: [
- "Michael Grant"
- ],
- cover_url: "http://books.google.com/books/content?id=zVUxICZlgYIC&printsec=frontcover&img=1&zoom=1&source=gbs_api"
- },
- {
- id: 4,
- title: "Clementina's Cactus",
- authors: [
- "Ezra Jack Keats"
- ],
- cover_url: "http://books.google.com/books/content?id=B5MwDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
- },
- {
- id: 5,
- title: "Flowers",
- authors: [
- "Gail Saunders Smith"
- ],
- cover_url: "http://books.google.com/books/content?id=ogs_KDUQLSsC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
- }
- ],
- responses: [ ]
+    // null,
+    {
+id: 2,
+username: "m",
+lists: [
+{
+id: 4,
+title: "Currently Reading"
+},
+{
+id: 5,
+title: "Want to Read"
+},
+{
+id: 6,
+title: "Read"
+}
+],
+books: [
+{
+id: 7,
+title: "World Cheese Book",
+authors: [
+"Juliet Harbutt"
+],
+cover_url: "http://books.google.com/books/content?id=kMvlBwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+book_list: "Read"
+},
+{
+id: 6,
+title: "Beautiful Corn",
+authors: [
+"Anthony Boutard"
+],
+cover_url: "http://books.google.com/books/content?id=gTlvzuG4bIoC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+book_list: "Want to Read"
+},
+{
+id: 8,
+title: "A Bag of Marbles",
+authors: [
+"Joseph Joffo"
+],
+cover_url: "http://books.google.com/books/content?id=BHIUSd6psgIC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+book_list: "Read"
+}
+]
 },
     loggedIn: true,
   }

@@ -35,17 +35,23 @@ div#sign-up {
   margin: 5px;
 }
 
+div#book-content {
+  border-style: dotted;
+  padding: 10px 20px 10px 20px;
+  margin: 5px;
+}
+
 .level {
   border-style: dotted;
   padding: 10px 20px 10px 20px;
   margin: 5px;
 }
 
-.container {
+/* .container {
   border-style: dotted;
   padding: 10px 20px 10px 20px;
   margin: 5px;
-}
+} */
 
 .navbar {
   display: flex;

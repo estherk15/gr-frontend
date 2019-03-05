@@ -7,16 +7,17 @@ class SideBar extends Component {
   render() {
     // console.log(this.props.currentUser)
     return (
-      <div className="tile is-ancestor">
-      SideBar Container
-        <div className="tile is-vertical is-parent">
-          <div className="tile">
-            <SearchMyBooks />
-          </div>
-          <div>
-            <ListsContainer currentUser={this.props.currentUser}/>
-          </div>
+      <div className="tile is-parent is-vertical ">
+        <div className="tile is-child">
+          <p>SideBar Container </p>
         </div>
+        <div className="tile is-parent">
+          <SearchMyBooks />
+        </div>
+        <div className="tile is-vertical is-parent">
+          <ListsContainer handleClickList={this.props.handleClickList} currentUser={this.props.currentUser}/>
+        </div>
+
       </div>
     );
   }

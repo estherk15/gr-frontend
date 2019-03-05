@@ -2,18 +2,21 @@ import React from 'react';
 
 class ListButton extends React.Component {
   state ={
-    value:'',
+    value:''
   }
 
   addBookToList = (event) => { //Adds a book to a list
-    const listId = event.target.value
+    const listName = event.target.value
     const bookData = {
+      user_id: this.props.currentUser.id,
       google_id: this.props.id,
       title: this.props.title,
       authors: this.props.authors,
       cover_url: this.props.imgUrl,
-      list: {id: listId}
+      list: {title: listName}
     }
+
+    console.log(bookData)
 
     fetch('http://localhost:3000/api/v1/add_book', {
       method: 'PATCH',
@@ -26,7 +29,7 @@ class ListButton extends React.Component {
   }
 
   changeList = (event) => { //Updates the book's list
-    const listId = event.target.value
+    const listName = event.target.value
     const bookId = this.props.id
 
     fetch(`http://localhost:3000/api/v1/books/${bookId}`, {
@@ -36,7 +39,9 @@ class ListButton extends React.Component {
         'Accept': 'application/json'
       },
       body: JSON.stringify({
-        list_id: listId,
+        id: this.props.id,
+        user_id: this.props.currentUser.id,
+        title: listName,
       })
     })
     .then(response => response.json())
@@ -44,15 +49,16 @@ class ListButton extends React.Component {
   }
 
   render() {
+    console.log('LISTBUTTON', this.props);
     const dropdown = () => {
       if(this.props.searchSubmitted){
         return (
           <div className='select' >
             <select onChange={this.addBookToList}>
               <option>Add a Book</option>
-              <option value='1'>Currently Reading</option>
-              <option value='2'>Want to Read</option>
-              <option value='3'>Read</option>
+              <option value='Currently Reading'>Currently Reading</option>
+              <option value='Want to Read'>Want to Read</option>
+              <option value='Read'>Read</option>
             </select>
           </div>
         )
@@ -61,16 +67,15 @@ class ListButton extends React.Component {
           <div className='select' >
             <select onChange={this.changeList}>
               <option>Change List</option>
-              <option value='1'>Currently Reading</option>
-              <option value='2'>Want to Read</option>
-              <option value='3'>Read</option>
+              <option value='Currently Reading'>Currently Reading</option>
+              <option value='Want to Read'>Want to Read</option>
+              <option value='Read'>Read</option>
             </select>
           </div>
 
         )
       }
     }
-
 
     // <i class="fas fa-times"></i>
 

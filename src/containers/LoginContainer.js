@@ -5,9 +5,11 @@ import SignUp from '../components/SignUp'
 
 const LoginContainer = (props) => {
   return (
-    <div className="container">
-      <SignIn signinUser={props.signinUser}/>
-      <SignUp signupUser={props.signupUser}/>
+    <div className="section">
+      <div className="container is-fluid">
+        <SignIn signinUser={props.signinUser}/>
+        <SignUp signupUser={props.signupUser}/>
+      </div>
     </div>
   );
 

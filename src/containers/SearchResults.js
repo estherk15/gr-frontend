@@ -7,7 +7,11 @@ class SearchResults extends Component {
   render() {
     // console.log('PROPS in Search Result', this.props)
     return (
-      <div className='search-results'>
+      <div className="tile is-parent is-vertical">
+      <div className="tile is-child">
+        <p className="title">Search Results</p>
+      </div>
+
         Search Results
         <BookList
           books={this.props.books}
