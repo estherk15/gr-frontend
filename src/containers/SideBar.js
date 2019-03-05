@@ -9,7 +9,7 @@ class SideBar extends Component {
     return (
       <div className="tile is-parent is-vertical" id="sidebar">
         <div className="tile is-child">
-          <p>SideBar Container </p>
+          <strong className="title">My Reading Lists</strong>
         </div>
         <div className="tile is-parent">
           <SearchMyBooks />

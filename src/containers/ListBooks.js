@@ -14,6 +14,7 @@ class ListBooks extends Component {
 
         <BookList
           books={this.props.books}
+          description={this.props.books.snippet}
           currentUser={this.props.currentUser}/>
       </div>
     );

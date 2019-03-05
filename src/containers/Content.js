@@ -70,8 +70,9 @@ class Content extends React.Component {
     return (
       <div className="columns">
         <div className="column is-full">
-          Content Container
-          <SearchAllBooks searchSubmit={this.searchSubmit} />
+          <div className="section">
+            <SearchAllBooks searchSubmit={this.searchSubmit} />
+          </div>
           <div className="columns">
             <div className="column is-3">
               <div className="tile is-ancestor">
