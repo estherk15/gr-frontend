@@ -3,6 +3,7 @@ import React from 'react';
 class ListButton extends React.Component {
   state ={
     value:'',
+    list: this.props.book_list,
   }
 
   addBookToList = (event) => { //Adds a book to a list
@@ -16,8 +17,6 @@ class ListButton extends React.Component {
       list: {title: listName},
       description: this.props.description,
     }
-
-    console.log(bookData)
 
     fetch('http://localhost:3000/api/v1/add_book', {
       method: 'PATCH',
@@ -45,6 +44,10 @@ class ListButton extends React.Component {
         title: listName,
       })
     })
+    .then(response => response.json())
+    .then(newList => this.setState({
+      list: newList.book_list
+    }))
   }
 
   render() {
@@ -64,7 +67,7 @@ class ListButton extends React.Component {
       } else {
         return (
           <div className='select' >
-            <select value={this.props.book_list} onChange={this.changeList}>
+            <select value={this.state.list} onChange={this.changeList}>
 
               <option value='Currently Reading'>Currently Reading</option>
               <option value='Want to Read'>Want to Read</option>
