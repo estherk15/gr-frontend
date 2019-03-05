@@ -10,7 +10,7 @@ class Book extends React.Component {
         <article className="media">
           <figure className="media-left">
             <p className="image is-90x90">
-              <img src={this.props.cover_url} />
+              <img src={this.props.cover_url} alt={this.props.title} height='90' width='90'/>
             </p>
           </figure>
           <div className="media-content">

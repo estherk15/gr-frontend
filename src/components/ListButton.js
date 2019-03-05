@@ -2,7 +2,7 @@ import React from 'react';
 
 class ListButton extends React.Component {
   state ={
-    value:''
+    value:'',
   }
 
   addBookToList = (event) => { //Adds a book to a list
@@ -29,7 +29,7 @@ class ListButton extends React.Component {
     })
   }
 
-  changeList = (event) => { //Updates the book's list
+  changeList = (event) => { //Updates the book's list, backend takes the book id and changes its list to the list with the matching title.
     const listName = event.target.value
     const bookId = this.props.id
 
@@ -45,8 +45,6 @@ class ListButton extends React.Component {
         title: listName,
       })
     })
-    .then(response => response.json())
-    .then(console.log)
   }
 
   render() {
@@ -66,8 +64,8 @@ class ListButton extends React.Component {
       } else {
         return (
           <div className='select' >
-            <select onChange={this.changeList}>
-              <option>Change List</option>
+            <select value={this.props.book_list} onChange={this.changeList}>
+
               <option value='Currently Reading'>Currently Reading</option>
               <option value='Want to Read'>Want to Read</option>
               <option value='Read'>Read</option>

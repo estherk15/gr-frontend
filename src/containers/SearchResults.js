@@ -12,7 +12,7 @@ class SearchResults extends Component {
         <p className="title">Search Results</p>
       </div>
 
-        Search Results
+      
         <BookList
           books={this.props.books}
           searchSubmitted={this.props.searchSubmitted}
