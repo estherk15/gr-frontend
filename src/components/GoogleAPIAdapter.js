@@ -35,7 +35,7 @@ class GoogleAPIAdapter extends React.Component {
       } else if (bookData.authors) {
         console.log('one', bookData.authors);
         return bookData.authors.join()
-      } else {
+      } else {//for the books that do not have an author property, the programs breaks without the  below code!
         // debugger
         console.log('do not trust apis', bookData.authors);
         return "";

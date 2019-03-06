@@ -1,6 +1,5 @@
 import React from 'react';
 import ListButton from './ListButton'
-import book from '../assets/book.png'
 
 class Book extends React.Component {
 
@@ -11,7 +10,7 @@ class Book extends React.Component {
         <article className="media">
           <figure className="media-left">
             <p className="image is-50x50">
-              <img src={this.props.cover_url} alt={book} height='50' width='50'/>
+              <img src={this.props.cover_url} alt={'No Image Available'} height='50' width='50'/>
             </p>
           </figure>
           <div className="media-content">
@@ -28,7 +27,7 @@ class Book extends React.Component {
           </div>
           <div className="media-right has-text-right">
             <ListButton {...this.props}/>
-            <a href={this.props.info_link} targer="_blank" rel="noopener">More details</a>
+            <a href={this.props.info_link} target="_blank" rel="noopener">More details</a>
           </div>
           <div className="media-right">
 

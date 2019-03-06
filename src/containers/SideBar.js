@@ -11,9 +11,7 @@ class SideBar extends Component {
         <div className="tile is-child">
           <strong className="title">My Reading Lists</strong>
         </div>
-        <div className="tile is-parent">
-          <SearchMyBooks />
-        </div>
+
         <div className="tile is-vertical is-parent">
           <ListsContainer handleClickList={this.props.handleClickList} currentUser={this.props.currentUser}/>
         </div>
@@ -25,3 +23,6 @@ class SideBar extends Component {
 }
 
 export default SideBar;
+// <div className="tile is-parent">
+//   <SearchMyBooks />
+// </div>

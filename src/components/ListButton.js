@@ -19,7 +19,7 @@ class ListButton extends React.Component {
       info_link: this.props.info_link,
     }
 
-    console.log('addBookToList', bookData);
+    // console.log('addBookToList', bookData);
 
     fetch('http://localhost:3000/api/v1/add_book', {
       method: 'PATCH',
