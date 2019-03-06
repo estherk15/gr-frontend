@@ -23,7 +23,7 @@ class SignUp extends React.Component {
         </div>
 
         <div className="column is-4">
-          <div className="subtitle is-6">
+          <div className="subtitle is-4">
             <p><strong>New User? Create an account!</strong></p>
           </div>
           <div>
