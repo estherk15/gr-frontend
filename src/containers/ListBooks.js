@@ -9,7 +9,7 @@ class ListBooks extends Component {
     return (
       <div className="tile is-parent is-vertical">
         <div className="tile is-child">
-          <p className="title">My Books</p>
+          <p className="title">{this.props.title}</p>
         </div>
 
         <BookList

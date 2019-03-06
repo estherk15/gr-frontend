@@ -47,7 +47,13 @@ div#navheader {
   margin: 5px;
 }
 
+/* div#reading-list:hover {
+
+} */
+
 section {
+  border-style: dotted;
+  padding: 10px 20px 10px 20px;
   margin-left: 60px;
   margin-right: 60px;
 }

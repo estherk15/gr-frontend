@@ -2,29 +2,30 @@ import React from 'react';
 import BookContent from './BookContent'
 import SideBar from './SideBar'
 import SearchAllBooks from '../components/SearchAllBooks'
+import GoogleAPIAdapter from '../components/GoogleAPIAdapter'
 
 
-const fetchBooksFromGoogle = (searchInput) => { //fetches search result from google books API
-  return fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchInput}`)
-  .then(response => response.json())
-  .then(json => {
-    return json.items.map(item => createBook(item)) //returns an array of objects created from the createBook fn.
-  })
-}
-
-//These belong in the Google Books API
-const createBook = (bookObj) => { //volumeInfo is a key in google data
-  const categories = bookObj.volumeInfo.title.categories ? bookObj.volumeInfo.title.categories : null
-  return {
-    title: bookObj.volumeInfo.title,
-    id: bookObj.id, //Google has a string of characters attached to each book ex. "wrOQLV6xB-wC"
-    authors: bookObj.volumeInfo.authors,
-    description: bookObj.volumeInfo.description,
-    categories: categories, //this is an array
-    cover_url: bookObj.volumeInfo.imageLinks.thumbnail,
-    infoLink: bookObj.volumeInfo.infoLink
-  }
-}
+// const fetchBooksFromGoogle = (searchInput) => { //fetches search result from google books API
+//   return fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchInput}`)
+//   .then(response => response.json())
+//   .then(json => {
+//     return json.items.map(item => createBook(item)) //returns an array of objects created from the createBook fn.
+//   })
+// }
+//
+// //These belong in the Google Books API
+// const createBook = (bookObj) => { //volumeInfo is a key in google data
+//   const categories = bookObj.volumeInfo.title.categories ? bookObj.volumeInfo.title.categories : null
+//   return {
+//     title: bookObj.volumeInfo.title,
+//     id: bookObj.id, //Google has a string of characters attached to each book ex. "wrOQLV6xB-wC"
+//     authors: bookObj.volumeInfo.authors,
+//     description: bookObj.volumeInfo.description,
+//     categories: categories, //this is an array
+//     cover_url: bookObj.volumeInfo.imageLinks.thumbnail,
+//     infoLink: bookObj.volumeInfo.infoLink
+//   }
+// }
 
 class Content extends React.Component {
   state = {
@@ -33,14 +34,16 @@ class Content extends React.Component {
     searchResults: [],
     clickedList: false,
     clickedListBooks: [],
+    allBooksTab: "is-active",
   }
 
-  //This fn will take the search input and fire off fetchBooksFromGoogle fn with
+  //This fn will take the search input and fire off fetchBooksFromGoogle fn within GoogleAPIAdapter class
   fetchSearchResults = (searchInput) => {
-    fetchBooksFromGoogle(searchInput)
+    GoogleAPIAdapter.fetchBooksFromGoogle(searchInput)
     .then(books =>{
       this.setState({
         searchSubmitted: true,
+        allBooksTab: null,
         searchResults: books,
         clickedList: false,
       })
@@ -51,7 +54,7 @@ class Content extends React.Component {
   searchSubmit = (event, searchInput) => {
     event.preventDefault()
     this.fetchSearchResults(searchInput)
-    event.target.reset()
+    // event.target.reset()
   }
 
   handleClickList = (id) => { //when a user clicks a list in sidebar, this fetches all books in that list for display
@@ -64,9 +67,16 @@ class Content extends React.Component {
     }))
   }
 
+  showAllBooks = () => { //Click event that shows all books.
+    this.setState({
+      searchSubmitted: false,
+      allBooksTab: "is-active",
+      clickedList: false,
+    })
+  }
 
   render() {
-    console.log(this.state);
+    // console.log  (this.state);
     return (
       <div className="columns">
         <div className="column is-full">
@@ -80,6 +90,11 @@ class Content extends React.Component {
               </div>
             </div>
             <div className="column">
+            <div className="tabs is-right">
+              <ul>
+                <li className={this.state.allBooksTab} onClick={this.showAllBooks}><a>Back to All Books</a></li>
+              </ul>
+            </div>
               <BookContent
                 currentUser={this.props.currentUser}
                 searchSubmitted={this.state.searchSubmitted}

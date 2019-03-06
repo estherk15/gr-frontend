@@ -8,12 +8,17 @@ class SearchMyBooks extends Component {
 
   render() {
     return (
-      
+
       <div className="tile is-child">
         <div className="field">
           <div className="control">
             <input className="input is-small" type='text' placeholder="Search My Books"/>
-            <input className="button is-small is-primary" type="submit" placeholder="Search" />
+            <div className="level">
+              <div className="level-item is-left"></div>
+              <div className="level-item is-pulled-right">
+                <input className="button is-small is-primary" type="submit" placeholder="Search" />
+                </div>
+            </div>
           </div>
         </div>
       </div>

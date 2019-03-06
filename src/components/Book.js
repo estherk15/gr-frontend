@@ -4,13 +4,13 @@ import ListButton from './ListButton'
 class Book extends React.Component {
 
   render() {
-    console.log('BOOK', this.props);
+    // console.log('BOOK', this.props);
     return(
       <div className="tile is-child">
         <article className="media">
           <figure className="media-left">
-            <p className="image is-90x90">
-              <img src={this.props.cover_url} alt={this.props.title} height='90' width='90'/>
+            <p className="image is-50x50">
+              <img src={this.props.cover_url} height='50' width='50'/>
             </p>
           </figure>
           <div className="media-content">
@@ -25,8 +25,9 @@ class Book extends React.Component {
             </div>
 
           </div>
-          <div className="media-right has-text-centered">
+          <div className="media-right has-text-right">
             <ListButton {...this.props}/>
+            <a href={this.props.info_link} targer="_blank" rel="noopener">More details</a>
           </div>
           <div className="media-right">
 

@@ -16,6 +16,7 @@ class ListButton extends React.Component {
       cover_url: this.props.cover_url,
       list: {title: listName},
       description: this.props.description,
+      info_link: this.props.info_link,
     }
 
     fetch('http://localhost:3000/api/v1/add_book', {
@@ -51,7 +52,7 @@ class ListButton extends React.Component {
   }
 
   render() {
-    console.log('LISTBUTTON', this.props);
+    // console.log('LISTBUTTON', this.props);
     const dropdown = () => {
       if(this.props.searchSubmitted){
         return (
@@ -64,7 +65,7 @@ class ListButton extends React.Component {
             </select>
           </div>
         )
-      } else {
+      } else { //buttons for MyBooks that only change which list you want to move a book to
         return (
           <div className='select' >
             <select value={this.state.list} onChange={this.changeList}>

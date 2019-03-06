@@ -5,7 +5,7 @@ import BookList from './BookList'
 class MyBooks extends Component {
 
   render() {
-    console.log("passed down to myBook", this.props)
+    // console.log("passed down to myBook", this.props)
     return (
       <div className="tile is-parent is-vertical">
         <div className="tile is-child">
