@@ -7,64 +7,58 @@ import Main from './containers/Main'
 class App extends Component {
 
   state = {
-    currentUserId: '',
+    currentUserId: '1',
     currentUser:
     null,
 
-//     {
-// id: 1,
-// username: "esther",
-// lists: [
-// {
-// id: 1,
-// title: "Currently Reading"
-// },
-// {
-// id: 2,
-// title: "Want to Read"
-// },
-// {
-// id: 3,
-// title: "Read"
-// }
-// ],
-// books: [
-// {
-// id: 2,
-// title: "James and the Giant Peach",
-// authors: [
-// "Roald Dahl"
-// ],
-// cover_url: "http://books.google.com/books/content?id=o5-dBrmqAJ0C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-// book_list: "Read",
-// description: "From the bestselling author of Charlie and the Chocolate Factory and The BFG! After James Henry Trotter's parents are tragically eaten by a rhinoceros, he goes to live with his two horrible aunts, Spiker and Sponge. Life there is no fun, until James accidentally drops some magic crystals by the old peach tree and strange things start to happen. The peach at the top of the tree begins to grow, and before long it's as big as a house. Inside, James meets a bunch of oversized friends—Grasshopper, Centipede, Ladybug, and more. With a snip of the stem, the peach starts rolling away, and the great adventure begins! From the Trade Paperback edition.",
-// info_link: null
-// },
-// {
-// id: 3,
-// title: "Half a Lifelong Romance",
-// authors: [
-// "Eileen Chang",
-// "Ailing Zhang"
-// ],
-// cover_url: "http://books.google.com/books/content?id=nAbTCwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-// book_list: "Want to Read",
-// description: "Shanghai, 1930s. Shen Shijun, a young engineer, has fallen in love with his colleague, the beautiful Gu Manzhen. He is determined to resist his family's efforts to match him with his wealthy cousin so that he can marry the woman he truly loves. But dark circumstances--a lustful brother-in-law, a treacherous sister, a family secret--force the two young lovers apart. As Manzhen and Shijun go on their separate paths, they lose track of one another, and their lives become filled with feints and schemes, missed connections and tragic misunderstandings. At every turn, societal expectations seem to thwart their prospects for happiness. Still, Manzhen and Shijun dare to hold out hope--however slim--that they might one day meet again. A glamorous, wrenching tale set against the glittering backdrop of an extraordinary city, Half a Lifelong Romance is a beloved classic from one of the essential writers of twentieth-century China--",
-// info_link: null
-// },
-// {
-// id: 1,
-// title: "The Cactus",
-// authors: [
-// "Sarah Haywood"
-// ],
-// cover_url: "http://books.google.com/books/content?id=-xE1DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-// book_list: "Currently Reading",
-// description: "“Wonderfully funny and astute…. Fans of Eleanor Oliphant Is Completely Fine will love The Cactus.” —Red magazine In this witty and heartfelt debut, one woman’s unconventional journey to motherhood means learning to embrace the unexpected Even the prickliest cactus has its flower… For Susan Green, messy emotions don’t fit into the equation of her perfectly ordered life. She has a flat that is ideal for one, a job that suits her passion for logic and an “interpersonal arrangement” that provides cultural and other, more intimate, benefits. But suddenly confronted with the loss of her mother and the news that she is about to become a mother herself, Susan’s greatest fear is realized. She is losing control. When she learns that her mother’s will inexplicably favors her indolent brother, Edward, Susan’s already dismantled world is sent flying into a tailspin. As Susan’s due date draws near and her family problems become increasingly difficult to ignore, Susan finds help and self-discovery in the most unlikely of places. Featuring an endearing cast of characters and tremendous heart, The Cactus is a poignant debut and a delightful reminder that some things can’t be explained by logic alone.",
-// info_link: null
-// }
-// ]
-// },
+  //   {
+  //   id: 1,
+  //   username: "Esther",
+  //   lists: [
+  //   {
+  //   id: 1,
+  //   title: "Currently Reading"
+  //   },
+  //   {
+  //   id: 2,
+  //   title: "Want to Read"
+  //   },
+  //   {
+  //   id: 3,
+  //   title: "Read"
+  //   }
+  //   ],
+  //   books: [
+  //   {
+  //   id: 1,
+  //   title: "Half a Lifelong Romance",
+  //   authors: "Eileen Chang, Ailing Zhang",
+  //   cover_url: "http://books.google.com/books/content?id=nAbTCwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+  //   book_list: "Want to Read",
+  //   description: "Shanghai, 1930s. Shen Shijun, a young engineer, has fallen in love with his colleague, the beautiful Gu Manzhen. He is determined to resist his family's efforts to match him with his wealthy cousin so that he can marry the woman he truly loves. But dark circumstances--a lustful brother-in-law, a treacherous sister, a family secret--force the two young lovers apart. As Manzhen and Shijun go on their separate paths, they lose track of one another, and their lives become filled with feints and schemes, missed connections and tragic misunderstandings. At every turn, societal expectations seem to thwart their prospects for happiness. Still, Manzhen and Shijun dare to hold out hope--however slim--that they might one day meet again. A glamorous, wrenching tale set against the glittering backdrop of an extraordinary city, Half a Lifelong Romance is a beloved classic from one of the essential writers of twentieth-century China--",
+  //   info_link: "http://books.google.com/books?id=nAbTCwAAQBAJ&dq=half+a+lifelong&hl=&source=gbs_api"
+  //   },
+  //
+  //   {
+  //   id: 3,
+  //   title: "In Other Words",
+  //   authors: "["Jhumpa Lahiri"]",
+  //   cover_url: "http://books.google.com/books/content?id=ABcrCQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+  //   book_list: "Want to Read",
+  //   description: "National Best Seller From the best-selling author and Pulitzer Prize winner, a powerful nonfiction debut—an “honest, engaging, and very moving account of a writer searching for herself in words.” —Kirkus Reviews (starred) In Other Words is a revelation. It is at heart a love story—of a long and sometimes difficult courtship, and a passion that verges on obsession: that of a writer for another language. For Jhumpa Lahiri, that love was for Italian, which first captivated and capsized her during a trip to Florence after college. Although Lahiri studied Italian for many years afterward, true mastery always eluded her. Seeking full immersion, she decides to move to Rome with her family, for “a trial by fire, a sort of baptism” into a new language and world. There, she begins to read, and to write—initially in her journal—solely in Italian. In Other Words, an autobiographical work written in Italian, investigates the process of learning to express oneself in another language, and describes the journey of a writer seeking a new voice. Presented in a dual-language format, this is a wholly original book about exile, linguistic and otherwise, written with an intensity and clarity not seen since Vladimir Nabokov: a startling act of self-reflection and a provocative exploration of belonging and reinvention. From the Hardcover edition.",
+  //   info_link: "https://play.google.com/store/books/details?id=ABcrCQAAQBAJ&source=gbs_api"
+  //   },
+  //   {
+  //   id: 4,
+  //   title: "Ancillary Justice",
+  //   authors: "["Ann Leckie"]",
+  //   cover_url: "http://books.google.com/books/content?id=obAHf43THvQC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+  //   book_list: "Want to Read",
+  //   description: "The only novel ever to win the Hugo, Nebula, and Arthur C. Clarke Awards and the first book in Ann Leckie's New York Times bestselling trilogy. On a remote, icy planet, the soldier known as Breq is drawing closer to completing her quest. Once, she was the Justice of Toren - a colossal starship with an artificial intelligence linking thousands of soldiers in the service of the Radch, the empire that conquered the galaxy. Now, an act of treachery has ripped it all away, leaving her with one fragile human body, unanswered questions, and a burning desire for vengeance. In the Ancillary world: 1. Ancillary Justice2. Ancillary Sword3. Ancillary Mercy",
+  //   info_link: "https://play.google.com/store/books/details?id=obAHf43THvQC&source=gbs_api"
+  //   }
+  //   ]
+  // },
 
     loggedIn: false,
   }

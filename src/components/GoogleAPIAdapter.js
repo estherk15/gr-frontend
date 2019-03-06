@@ -30,9 +30,15 @@ class GoogleAPIAdapter extends React.Component {
 
     const authors = () => {
       if (bookData.authors && bookData.authors.length > 1) {
+        console.log('many', bookData.authors.join(", "));
         return bookData.authors.join(", ")
+      } else if (bookData.authors) {
+        console.log('one', bookData.authors);
+        return bookData.authors.join()
       } else {
-        return bookData.authors
+        // debugger
+        console.log('do not trust apis', bookData.authors);
+        return "";
       }
     }
 

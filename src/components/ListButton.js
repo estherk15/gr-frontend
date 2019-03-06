@@ -19,6 +19,8 @@ class ListButton extends React.Component {
       info_link: this.props.info_link,
     }
 
+    console.log('addBookToList', bookData);
+
     fetch('http://localhost:3000/api/v1/add_book', {
       method: 'PATCH',
       headers: {
@@ -26,7 +28,7 @@ class ListButton extends React.Component {
         'Accept': 'application/json'
       },
       body: JSON.stringify(bookData),
-    })
+    }).then(res => res.json()).then(console.log);
   }
 
   changeList = (event) => { //Updates the book's list, backend takes the book id and changes its list to the list with the matching title.

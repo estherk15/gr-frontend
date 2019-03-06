@@ -29,7 +29,7 @@ class SearchAllBooks extends Component {
 
           <div className="level-right"></div>
         </div>
-    
+
     );
   }
 }

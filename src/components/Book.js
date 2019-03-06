@@ -1,16 +1,17 @@
 import React from 'react';
 import ListButton from './ListButton'
+import book from '../assets/book.png'
 
 class Book extends React.Component {
 
   render() {
-    // console.log('BOOK', this.props);
+    console.log('BOOK', this.props);
     return(
       <div className="tile is-child">
         <article className="media">
           <figure className="media-left">
             <p className="image is-50x50">
-              <img src={this.props.cover_url} height='50' width='50'/>
+              <img src={this.props.cover_url} alt={book} height='50' width='50'/>
             </p>
           </figure>
           <div className="media-content">
