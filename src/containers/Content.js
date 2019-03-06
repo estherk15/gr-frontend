@@ -4,29 +4,6 @@ import SideBar from './SideBar'
 import SearchAllBooks from '../components/SearchAllBooks'
 import GoogleAPIAdapter from '../components/GoogleAPIAdapter'
 
-
-// const fetchBooksFromGoogle = (searchInput) => { //fetches search result from google books API
-//   return fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchInput}`)
-//   .then(response => response.json())
-//   .then(json => {
-//     return json.items.map(item => createBook(item)) //returns an array of objects created from the createBook fn.
-//   })
-// }
-//
-// //These belong in the Google Books API
-// const createBook = (bookObj) => { //volumeInfo is a key in google data
-//   const categories = bookObj.volumeInfo.title.categories ? bookObj.volumeInfo.title.categories : null
-//   return {
-//     title: bookObj.volumeInfo.title,
-//     id: bookObj.id, //Google has a string of characters attached to each book ex. "wrOQLV6xB-wC"
-//     authors: bookObj.volumeInfo.authors,
-//     description: bookObj.volumeInfo.description,
-//     categories: categories, //this is an array
-//     cover_url: bookObj.volumeInfo.imageLinks.thumbnail,
-//     infoLink: bookObj.volumeInfo.infoLink
-//   }
-// }
-
 class Content extends React.Component {
   state = {
     searchInput: '',

@@ -27,8 +27,8 @@ GOOGLE API ADAPTER
 
 
 ToDo Saturday:
-- Friday, you added a select feature to each book, but not the ability to add a book to selected list.
+<!-- - Friday, you added a select feature to each book, but not the ability to add a book to selected list. -->
 
-- Create a method in the backend to show a unique list of books in book serializer, so that MyBooks only shows a duplicate free list of books when you log in.
+<!-- - Create a method in the backend to show a unique list of books in book serializer, so that MyBooks only shows a duplicate free list of books when you log in. -->
 
-- Why does search for rat terrier break the program?
+<!-- - Why does search for rat terrier break the program? -->
