@@ -7,7 +7,7 @@ class Main extends React.Component {
   render() {
 
     return (
-      <div>
+      <div className="main-container">
         <div className='container is-fluid'>
           <NavHeader username={this.props.username}/>
         </div>
