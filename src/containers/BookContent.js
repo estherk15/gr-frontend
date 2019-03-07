@@ -4,7 +4,7 @@ import SearchResults from './SearchResults'
 import ListBooks from './ListBooks'
 
 class BookContent extends Component {
-  //renderContent is conditional, depending on whether you've entered a book search, it will return either the MyBooks or SearchResults component.
+  //renderContent is conditional, depending on whether you've entered a book search, clicked on a list or clicked on all books it will return either the MyBooks , list or SearchResults component.
   renderContent = () => {
     if(this.props.searchSubmitted){
       return <SearchResults
@@ -15,6 +15,8 @@ class BookContent extends Component {
       return <ListBooks
                 currentUser={this.props.currentUser}
                 {...this.props.clickedListBooks}/>
+    } else if (this.props.allBooksTab === "is-active") {
+      return <MyBooks books={this.props.allBooks}/>
     }
     else {
       return <MyBooks {...this.props}/>
@@ -22,7 +24,7 @@ class BookContent extends Component {
   }
 
   render() {
-    console.log('BOOKCONTENT', this.props)
+    // console.log('BOOKCONTENT', this.props)
     return (
       <div className="tile is-ancestor" id="book-content">
         {this.renderContent()}

@@ -9,7 +9,7 @@ class Main extends React.Component {
     return (
       <div>
         <div className='container is-fluid'>
-          <NavHeader username={this.props.currentUser.username}/>
+          <NavHeader username={this.props.username}/>
         </div>
 
         <div className="container is-fluid">

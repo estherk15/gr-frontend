@@ -11,6 +11,7 @@ class Content extends React.Component {
     searchResults: [],
     clickedList: false,
     clickedListBooks: [],
+    allBooks: this.props.books,
     allBooksTab: "is-active",
   }
 
@@ -34,8 +35,8 @@ class Content extends React.Component {
     // event.target.reset()
   }
 
-  handleClickList = (id) => { //when a user clicks a list in sidebar, this fetches all books in that list for display
-    fetch(`http://localhost:3000/api/v1/lists/${id}`)
+  handleClickList = (listId) => { //when a user clicks a list in sidebar, this fetches all books in that list for display
+    fetch(`http://localhost:3000/api/v1/lists/${listId}`)
     .then(response => response.json())
     .then(listBooks => this.setState({
       searchSubmitted: false, //so the search results page doesn't render
@@ -45,15 +46,21 @@ class Content extends React.Component {
   }
 
   showAllBooks = () => { //Click event that shows all books.
-    this.setState({
-      searchSubmitted: false,
-      allBooksTab: "is-active",
-      clickedList: false,
-    })
+    const id = this.props.currentUser.id
+    fetch(`http://localhost:3000/api/v1/users/${id}/books`)
+    .then(response => response.json())
+    .then(userBooks =>
+      this.setState({
+        allBooks: userBooks,
+        searchSubmitted: false,
+        allBooksTab: "is-active",
+        clickedList: false,
+      })
+    )
   }
 
   render() {
-    // console.log  (this.state);
+    // console.log(this.props)
     return (
       <div className="columns">
         <div className="column is-full">
@@ -77,7 +84,8 @@ class Content extends React.Component {
                 searchSubmitted={this.state.searchSubmitted}
                 searchResults={this.state.searchResults}
                 clickedList={this.state.clickedList}
-                clickedListBooks={this.state.clickedListBooks}/>
+                clickedListBooks={this.state.clickedListBooks}
+                allBooks={this.state.allBooks}/>
             </div>
           </div>
         </div>
@@ -90,3 +98,9 @@ class Content extends React.Component {
 export default Content
 
 //Content sends down the user's info lf all their books as well as state which holds the search information.
+
+// this.setState({
+//   searchSubmitted: false,
+//   allBooksTab: "is-active",
+//   clickedList: false,
+// })
