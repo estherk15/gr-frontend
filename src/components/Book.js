@@ -3,8 +3,10 @@ import ListButton from './ListButton'
 
 class Book extends React.Component {
 
+
+
   render() {
-    console.log('BOOK', this.props);
+    // console.log('BOOK', this.props);
     return(
       <div className="tile is-child">
         <article className="media">
