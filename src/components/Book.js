@@ -3,10 +3,7 @@ import ListButton from './ListButton'
 
 class Book extends React.Component {
 
-
-
   render() {
-    // console.log('BOOK', this.props);
     return(
       <div className="tile is-child">
         <article className="media">
@@ -38,8 +35,6 @@ class Book extends React.Component {
       </div>
     )
   }
-
-
 }
 
 export default Book

@@ -11,11 +11,9 @@ class Main extends React.Component {
         <div className='container is-fluid'>
           <NavHeader username={this.props.currentUser.username}/>
         </div>
-
         <div className="container is-fluid">
           <Content currentUser={this.props.currentUser}/>
         </div>
-
       </div>
 
     );
@@ -23,5 +21,3 @@ class Main extends React.Component {
 }
 
 export default Main;
-
-  // <NavHeader searchSubmit={this.searchSubmit}/>

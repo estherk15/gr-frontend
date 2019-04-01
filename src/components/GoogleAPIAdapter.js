@@ -1,7 +1,6 @@
 import React from 'react';
 
 class GoogleAPIAdapter extends React.Component {
-
   //fetches search result from google books API
   static fetchBooksFromGoogle(searchInput){ //searchInput from Content.js
     return fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchInput}`)
@@ -11,15 +10,12 @@ class GoogleAPIAdapter extends React.Component {
     })
   }
 
-  //These belong in the Google Books API
   static createBook = (bookObj) => { //volumeInfo is a key in google data
-
     const bookData = bookObj.volumeInfo
     const categories = bookData.title.categories ? (bookData.title.categories) : "No available categories"
     const title = bookData.title ? bookData.title : "No available Title"
     const description = bookData.description ? bookData.description : "No description available"
     // const cover_url = bookData.imageLinks.thumbnail
-
     const cover_url = () => {
       if(bookData.imageLinks && bookData.imageLinks.thumbnail) {
         return bookData.imageLinks.thumbnail
@@ -30,14 +26,10 @@ class GoogleAPIAdapter extends React.Component {
 
     const authors = () => {
       if (bookData.authors && bookData.authors.length > 1) {
-        console.log('many', bookData.authors.join(", "));
         return bookData.authors.join(", ")
       } else if (bookData.authors) {
-        console.log('one', bookData.authors);
         return bookData.authors.join()
       } else {//for the books that do not have an author property, the programs breaks without the  below code!
-        // debugger
-        console.log('do not trust apis', bookData.authors);
         return "";
       }
     }
@@ -55,8 +47,6 @@ class GoogleAPIAdapter extends React.Component {
 }
 
 export default GoogleAPIAdapter
-
-
 
 // class GoogleAPIAdapter {
   // doSomething(){ //instance

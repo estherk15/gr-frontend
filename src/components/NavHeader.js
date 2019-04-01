@@ -2,12 +2,11 @@ import React, { Component } from 'react';
 
 class NavHeader extends Component {
 
-  refreshPage() {
+  refreshPage() { //Refresh the window, replace this with React Router
     window.location.reload()
   }
 
   render() {
-    // console.log(this.props)
     return (
       <div className="level" id="navheader">
         <div className="level-left">
