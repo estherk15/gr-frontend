@@ -6,9 +6,6 @@ This React web app was built to help readers organize their books into three cat
 
 - [Libraries & Middleware](#libraries--middleware)
 - [Installation](#installation)
-- [Structure](#structure)
-- [Components](#components)
-- [User Accounts](#user-accounts)
 - [Future Development](#future-development)
 
 ## Libraries & Middleware
@@ -29,4 +26,4 @@ This project was a hard lesson learned on the pitfalls of prop drilling. Props w
 
 ### Pagination of Search Results
 
-At the moment, entering a search term only results in the first 10 books. I'd like to add pagination features so that a user can see the next 10 results in the search. 
+At the moment, entering a search term only results in the first 10 books. I'd like to add pagination features so that a user can see the next 10 results in the search.
