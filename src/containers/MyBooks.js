@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-// import Sort from '../components/Sort'
 import BookList from './BookList'
 
 class MyBooks extends Component {
 
   render() {
-    // console.log("passed down to myBook", this.props)
     return (
       <div className="tile is-parent is-vertical">
         <div className="tile is-child">
@@ -19,9 +17,6 @@ class MyBooks extends Component {
       </div>
     );
   }
-
 }
 
 export default MyBooks;
-
-// <Sort />

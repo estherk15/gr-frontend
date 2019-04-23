@@ -33,5 +33,3 @@ class BookContent extends Component {
 }
 
 export default BookContent;
-
-// <MyBooks />
