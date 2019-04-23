@@ -19,8 +19,6 @@ class ListButton extends React.Component {
       info_link: this.props.info_link,
     }
 
-    // console.log('addBookToList', bookData);
-
     fetch('http://localhost:3000/api/v1/add_book', {
       method: 'PATCH',
       headers: {
@@ -54,7 +52,6 @@ class ListButton extends React.Component {
   }
 
   render() {
-    // console.log('LISTBUTTON', this.props);
     const dropdown = () => {
       if(this.props.searchSubmitted){
         return (
@@ -80,8 +77,6 @@ class ListButton extends React.Component {
         )
       }
     }
-
-    // <i class="fas fa-times"></i>
 
     return (
       <div>

@@ -7,6 +7,9 @@ FILTER / SORT
 NAVHEADER
 - Use React Router and Auth so the logout isn't a page refresh.
 
+**REFACTOR**
+- Context API / Redux : too much prop drilling
+
 **STYLE**
 - App.js : find a way to make the login error message appear on the screen by the form field.
 
@@ -29,3 +32,20 @@ COMPLETED TASKS
 <!-- GOOGLE API ADAPTER -->
 <!-- - adapter for fetch book apis and chaNge data to match what you entered -->
 <!-- - Also, to convert the data coming back from the db. You don't want the array of authors to be displayed as an array of authors, you want it to be displayed "Esther, Janice, James" NOT "EstherJaniceJames" -->
+
+
+Class format:
+// class GoogleAPIAdapter {
+  // doSomething(){ //instance
+  // }
+
+  // static doSomething(){ //class
+  // }
+
+// export default GoogleAPIAdapter
+
+  //
+  // const inst = new GoogleAPIAdapter() //instance
+  // inst.doSomething()
+
+  // GoogleAPIAdapter.doSomething() //class

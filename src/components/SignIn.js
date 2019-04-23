@@ -39,7 +39,7 @@ class SignIn extends React.Component {
             </div>
           </form>
         </div>
-        
+
       </nav>
 
     )
@@ -47,24 +47,3 @@ class SignIn extends React.Component {
 }
 
 export default SignIn;
-
-
-// <div className="level-right">
-//   <form className='form' className="level-item"onSubmit={(event) => this.props.signinUser(event, this.state)}>
-//     <div className='field'>
-//       <div className='control'>
-//         <input className="input" type="text" name="username" placeholder="Username" onChange={this.handleChange}/>
-//       </div>
-//     </div>
-//     <div className='field'>
-//       <div className='control'>
-//         <input className="input" type="password" name="password" placeholder="Password" onChange={this.handleChange}/>
-//       </div>
-//     </div>
-//     <div className='field'>
-//       <div className='control'>
-//         <input className="button is-primary" type="submit" value="Submit"/>
-//       </div>
-//     </div>
-//   </form>
-// </div>

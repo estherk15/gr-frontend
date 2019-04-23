@@ -38,5 +38,3 @@ class Book extends React.Component {
 }
 
 export default Book
-
-//if you add any amplifying information to each Book card, you have to make sure the information matches the user json and

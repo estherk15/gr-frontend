@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class NavHeader extends Component {
 
-  refreshPage() { //Refresh the window, replace this with React Router
+  refreshPage() { //Refresh the window, this is a fake logout, replace this with React Router
     window.location.reload()
   }
 
